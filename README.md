@@ -1,7 +1,9 @@
 # teste-sonar-jenkins
 
-Aplicacao Python minima usada para validar a integracao GitHub + Jenkins + SonarQube (Community + plugin de branches/PR).
+Aplicacao Python minima usada para validar a integracao **GitHub Actions + SonarQube Community** (com o plugin de branches/PR). O nome do repositorio e historico; o Jenkins nao e mais usado.
 
-- `main`: codigo limpo, com testes (cobertura alta) -> Quality Gate **passa**.
-- `feature/frete`: nova funcionalidade com testes -> Quality Gate **passa**.
-- `feature/relatorio-inseguro`: codigo com vulnerabilidade, bug e sem testes -> Quality Gate **barra**.
+- `main`: codigo limpo, com testes -> Quality Gate **passa**.
+- `feature/frete`: funcionalidade nova com testes -> **passa**.
+- `feature/relatorio-inseguro`: vulnerabilidade, bug e sem testes -> **barra** (check `sonar` falha).
+
+Workflow: `.github/workflows/sonar.yml`. Configuracao do Sonar: `sonar-project.properties`.
